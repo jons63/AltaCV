@@ -39,6 +39,11 @@ Though if you're creating your own CV/résumé, you'd probably prefer using the 
 * However if you're using `academicons`, you _must_ use either XeLaTeX or LuaLaTeX. If the doc then compiles but the icons don't show up in the output PDF, try compiling with LuaLaTeX instead.
 * The samples here use the [Lato](http://www.latofonts.com/lato-free-fonts/) and [Roboto Slab fonts](https://github.com/googlefonts/robotoslab). Feel free to use a different typeface package instead—often a different typeface will change the entire CV's feel.
 
+### Using Docker
+* Install Docker Desktop
+* Follow the instructions [here](https://miktex.org/howto/miktex-docker)
+* Example command `docker run -ti -v miktex:/miktex/.miktex -v C:/git/AltaCV:/miktex/work miktex/miktex pdflatex jongar.tex`
+
 ## `sample.tex` [WAS `sample-alt.tex` 2 FEBRUARY 2020, DEFAULT SINCE 10 MAY 2020] ##
 Many users have overlooked the optional argument of `\cvsection` to insert the right sidebar contents, and often confused that the right sidebar doesn't automatically break across pages. This new layout uses the `paracol` package for typesetting the left and right columns that _can_ break across pages. It also makes changing the column widths easier:
 

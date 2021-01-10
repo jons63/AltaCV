@@ -1,0 +1,203 @@
+% docker run -ti -v miktex:/miktex/.miktex -v C:/git/AltaCV:/miktex/work miktex/miktex pdflatex jongar.tex
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.3, 10 May 2020) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+%% AltaCV uses the fontawesome5 and academicons fonts
+%% and packages.
+%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Change the colours if you want to
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{DarkPastelRed}{HTML}{450808}
+\definecolor{PastelRed}{HTML}{8F0D0D}
+\definecolor{GoldenEarth}{HTML}{E7D192}
+\colorlet{name}{black}
+\colorlet{tagline}{PastelRed}
+\colorlet{heading}{DarkPastelRed}
+\colorlet{headingrule}{GoldenEarth}
+\colorlet{subheading}{PastelRed}
+\colorlet{accent}{PastelRed}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\footnotesize}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+\addbibresource{sample.bib}
+
+\begin{document}
+\name{Jonas Garsten}
+\tagline{Embedded software engineer}
+%% You can add multiple photos on the left or right
+\photoR{2.8cm}{meNo2.png}
+% \photoL{2.5cm}{Yacht_High,Suitcase_High}
+
+\personalinfo{%
+  % Not all of these are required!
+  \email{jonasgarsten@gmail.com}
+  \phone{0707-75-73-79}
+  \mailaddress{20, Halvsekelsgatan, 41535 Gothenburg}
+  \location{Gothenburg, Sweden}
+  \homepage{www.homepage.com}
+  %\twitter{@twitterhandle}
+  \linkedin{jongar}
+  \github{jons63}
+  %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+  % \orcid{0000-0000-0000-0000}
+  %% You can add your own arbtrary detail with
+  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+  %% Or you can declare your own field with
+  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+  % \gitlab{your_id}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+\cvsection{Experience}
+
+\cvevent{Development Engineer}{QRTECH AB}{September 2019 -- Ongoing}{Mölndal, Sweden}
+\begin{itemize}
+\item Worked on Volvo Cars climate control system for the SPA2 platform. The project is 
+built on NXPs S32K14x platform for which I helped develop an application using Vectors 
+DaVinci platform and a bootloader. 
+\item Developing internal processes for CI/CD and release management. 
+\end{itemize}
+
+\cvsection{About me}
+
+I am someone who easily integrates into new environments and get along with anyone. 
+It is always fun to meet and work with new people from which I can learn something from.
+Preferably \newline assignments shall include topics that I want to learn. This is not a big hurdle
+to clear as I am interested in everything from web development to circute board design. 
+If I had to choose what topics I am most interested in learning, I would say C++, 
+circute board design and bluetooth as these are topics I will have to learn to realise 
+some projcet ideas of mine.
+
+\medskip
+
+% use ONLY \newpage if you want to force a page break for
+% ONLY the current column
+%\newpage
+
+%% Switch to the right column. This will now automatically move to the second
+%% page if the content is too long.
+\switchcolumn
+
+\cvsection{Most Proud of}
+
+\cvachievement{\faTrophy}{Masters Degree}{Finishing my thesis while working full time}
+
+\divider
+
+\cvachievement{\faBatteryFull}{Investing in Myself}{Finding the time and energy for personal projects}
+
+\divider
+
+\cvachievement{\faFire}{Finding my Passion}{Figuring out that coding is what I burn for}
+
+\cvsection{Strengths}
+
+\cvtag{Hard-working}
+\cvtag{Team player}\\
+\cvtag{Hunger to learn}
+
+\divider\smallskip
+
+\cvtag{C}
+\cvtag{Embedded Systems}\\
+\cvtag{Scripting}
+
+\cvsection{Languages}
+
+\cvskill{Swedish}{5}
+\divider
+
+\cvskill{English}{5}
+
+%% Yeah I didn't spend too much time making all the
+%% spacing consistent... sorry. Use \smallskip, \medskip,
+%% \bigskip, \vpsace etc to make ajustments.
+\medskip
+
+\cvsection{Education}
+
+\cvevent{M.Sc.\ Systems, Control and \newline Mechatronics}{Chalmers University of Technology}{Sept 2017 -- Jan 2020}{}
+
+\divider
+
+\cvevent{B.Sc.\ in Automation and Mechatronics}{Chalmers University of Technology}{Sept 2014 -- June 2017}{}
+
+% \divider
+
+\cvsection{Referees}
+
+% \cvref{name}{email}{mailing address}
+Can be arranged on request
+
+
+\end{paracol}
+
+
+\end{document}
